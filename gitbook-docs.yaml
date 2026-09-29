@@ -8,13 +8,14 @@ site:
       children:
         - type: section
           key: section-1
-          title: Ficha_de_inscrição
+          title: Documentos
           path: ficha_de_inscricao
+          description: ""
           default: true
           children:
             - type: space
               key: space-1
-              title: Ficha_de_inscrição
+              title: Documentos
               path: ficha_de_inscricao
               default: true
               content:
