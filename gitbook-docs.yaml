@@ -1,0 +1,33 @@
+$schema: https://api.gitbook.com/gitbook-docs.yaml
+site:
+  title: Projeto_A3 Docs
+  structure:
+    - type: section-group
+      key: section-group-1
+      title: A3_Etapas
+      children:
+        - type: section
+          key: section-1
+          title: Ficha_de_inscrição
+          path: ficha_de_inscricao
+          default: true
+          children:
+            - type: space
+              key: space-1
+              title: Ficha_de_inscrição
+              path: ficha_de_inscricao
+              default: true
+              content:
+                directory: ./ficha_de_inscricao
+        - type: section
+          key: section-2
+          title: Vision_Board
+          path: vision_board
+          children:
+            - type: space
+              key: space-2
+              title: Vision_Board
+              path: vision_board
+              default: true
+              content:
+                directory: ./vision_board
