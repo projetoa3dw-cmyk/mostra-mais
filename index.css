@@ -1,0 +1,1030 @@
+/* ==========================================================================
+   1. PALETA E VARIÁVEIS DE CORES SEPARADAS POR COMPONENTE
+   ========================================================================== */
+:root {
+  /* --- 1.1 GRADIENTE DE FUNDO (Altere aqui para mudar SOMENTE o fundo) --- */
+  --bg-gradient-start: #F57189; /* Cor do topo esquerdo */
+  --bg-gradient-mid: #B990DC;   /* Cor do meio */
+  --bg-gradient-end: #F3B994;   /* Cor do canto inferior direito */
+
+  /* --- 1.2 CABEÇALHO / NAVBAR --- */
+  --navbar-bg: #30255f;         /* Cor de fundo do cabeçalho */
+  --navbar-text-color: #FFFFFF; /* Cor do texto "Mostra+" */
+
+  /* --- 1.3 BOTÃO DE LOGIN --- */
+  --btn-login-bg: #F2E4E2;      /* Fundo do botão logar */
+  --btn-login-text: #222222;    /* Cor do texto do botão logar */
+  --btn-login-hover: #FFFFFF;   /* Fundo do botão logar ao passar o mouse */
+
+  /* --- 1.4 ÁREA DE BUSCA E FILTRO --- */
+  --search-box-bg: #392C6F;     /* Fundo do container da barra de busca */
+  --search-input-bg: #F2E4E2;   /* Fundo do campo de texto de busca */
+  --search-input-text: #222222; /* Cor do texto digitado na busca */
+  --btn-filter-bg: rgba(255, 255, 255, 0.15); /* Fundo do botão de filtro */
+  --btn-search-bg: #F2E4E2;     /* Fundo do botão 'Buscar' */
+  --btn-search-text: #222222;   /* Texto do botão 'Buscar' */
+
+  /* --- 1.5 CARDS DOS PROJETOS (QUADRADOS) --- */
+  --card-bg: #F2E4E2;           /* Fundo dos cards dos projetos */
+  --card-title-color: #222222;  /* Cor do título do projeto */
+  --card-desc-color: #555555;   /* Cor da descrição */
+  --card-author-color: #777777; /* Cor do nome dos participantes */
+
+  /* --- 1.6 TAGS / BADGES DE CATEGORIA --- */
+  --badge-bio-bg: #D1F2D9;   --badge-bio-text: #1E6B37;
+  --badge-chem-bg: #E0ECF8;  --badge-chem-text: #1B4F72;
+  --badge-phys-bg: #FDEBD0;  --badge-phys-text: #7E5109;
+
+  /* --- 1.7 SETA DE NAVEGAÇÃO DE PÁGINA --- */
+  --nav-arrow-bg: #A58EF0;      /* Fundo da seta lateral */
+  --nav-arrow-icon: #FFFFFF;    /* Cor do ícone da seta */
+  --nav-arrow-hover: #836A9B;   /* Fundo da seta ao passar o mouse */
+}
+
+/* ==========================================================================
+   2. CONFIGURAÇÕES GERAIS E FUNDO (BODY)
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  /* Aplicação do gradiente exclusivo de fundo */
+  background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 45%, var(--bg-gradient-end) 100%);
+  color: #FFFFFF;
+  padding-bottom: 40px;
+}
+
+/* ==========================================================================
+   3. CABEÇALHO (NAVBAR)
+   ========================================================================== */
+.navbar {
+  width: 100%;
+  height: 60px;
+  background-color: var(--navbar-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--navbar-text-color);
+  letter-spacing: 0.5px;
+}
+
+.btn-login {
+  background-color: var(--btn-login-bg);
+  color: var(--btn-login-text);
+  border: none;
+  padding: 8px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-login:hover {
+  background-color: var(--btn-login-hover);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   4. CONTEÚDO PRINCIPAL & BUSCA
+   ========================================================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.search-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.search-label {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #FFFFFF;
+}
+
+.search-box {
+  background-color: var(--search-box-bg);
+  padding: 10px 14px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.btn-filter {
+  background-color: var(--btn-filter-bg);
+  color: #FFFFFF;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.2s;
+}
+
+.btn-filter:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  background-color: var(--search-input-bg);
+  padding: 8px 16px;
+  border-radius: 6px;
+  width: 260px;
+  font-size: 0.95rem;
+  color: var(--search-input-text);
+}
+
+.btn-search {
+  background-color: var(--btn-search-bg);
+  color: var(--btn-search-text);
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-search:hover {
+  background-color: #FFFFFF;
+}
+
+/* ==========================================================================
+   5. GRID 3x2 DE PROJETOS E HOVER (EFEITO ZOOM)
+   ========================================================================== */
+.grid-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 20px;
+  flex: 1;
+}
+
+.project-card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  /* Animação suave para quando passar o mouse */
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Aumento do card ao passar o mouse */
+.project-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.badge-biology   { background-color: var(--badge-bio-bg);  color: var(--badge-bio-text); }
+.badge-chemistry { background-color: var(--badge-chem-bg); color: var(--badge-chem-text); }
+.badge-physics   { background-color: var(--badge-phys-bg); color: var(--badge-phys-text); }
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--card-title-color);
+  margin-bottom: 10px;
+}
+
+.card-description {
+  font-size: 0.9rem;
+  color: var(--card-desc-color);
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.card-authors {
+  font-size: 0.85rem;
+  color: var(--card-author-color);
+  margin-top: auto;
+}
+
+/* ==========================================================================
+   6. SETA DISCRETA DE NAVEGAÇÃO
+   ========================================================================== */
+.nav-next {
+  background-color: var(--nav-arrow-bg);
+  color: var(--nav-arrow-icon);
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  /* 2. AJUSTE O TAMANHO DO SÍMBOLO/SETA AQUI */
+  font-size: 1.4rem;   /* Aumenta ou diminui o símbolo '>' */
+  font-weight: bold;   /* Deixa o símbolo mais espesso/negrito */
+  color: #0a0909;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.nav-next:hover {
+  background-color: var(--nav-arrow-hover);
+  transform: translateX(3px);
+}
+/* ==========================================================================
+   BOTÃO "VER PROJETO" DENTRO DO CARD (.btn-card-details)
+   ========================================================================== */
+.btn-card-details {
+  display: inline-block;
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px 18px;
+  box-sizing: border-box;
+  
+  /* Estilização e Cores da Paleta */
+  background: linear-gradient(90deg, var(--bg-gradient-start) 0%, var(--nav-arrow-bg) 100%);
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  
+  /* Efeito de transição suave */
+  transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.25s ease, background 0.25s ease;
+}
+
+/* Efeito ao passar o cursor no botão */
+.btn-card-details:hover {
+  transform: scale(1.03); /* Aumenta levemente */
+  box-shadow: 0 4px 15px rgba(165, 142, 240, 0.4); /* Leve brilho roxo/lilás */
+  color: #FFFFFF;
+}
+/* ==========================================================================
+   7. RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .navbar {
+    padding: 0 20px;
+  }
+  .search-box {
+    flex-direction: column;
+    width: 100%;
+  }
+  .search-input {
+    width: 100%;
+  }
+  .grid-wrapper {
+    flex-direction: column;
+  }
+  .nav-next {
+    margin-top: 10px;
+  }
+}
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS DE RESETS (Essenciais para o footer colar 100%)
+   ========================================================================== */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* O container de conteúdo principal empurra o footer até o final */
+.container {
+  flex: 1;
+}
+
+/* ==========================================================================
+   RODAPÉ (FOOTER - Colado nas laterais e no fundo)
+   ========================================================================== */
+.footer {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #6d4970; /* Cor de fundo */
+  color: #cebab0;            /* Cor do texto */
+  padding: 40px 0;
+  margin: 150px 0 0 0;        /* Apenas margin-top para afastar do conteúdo anterior */
+  border-radius: 0;          /* Remove qualquer curvatura nas pontas */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;           /* Evita colar o texto no limite em telas menores */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around; /* Distribui as colunas */
+  gap: 40px;
+}
+
+.footer-col h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #070605;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease, text-shadow 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+/* Efeito ao passar o cursor no texto */
+.footer-col ul li a:hover {
+  color: #FFFFFF;             /* Fica branco brilhante */
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Leve brilho */
+  transform: translateX(2px); /* Pequeno deslocamento suave */
+}
+
+/* Ajuste Responsivo para celulares */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+/* ==========================================================================
+   PÁGINA DE LOGIN (COMPUTADOR X CELULAR)
+   ========================================================================== */
+.login-body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--purple-dark); /* Fundo roxo escuro base #392C6F */
+}
+
+.login-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  box-sizing: border-box;
+  background-image: url('bg-login.jpg'); /* Nome do seu arquivo de imagem */
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  /* Alinha a ilustração para a esquerda para não colidir com o formulário no lado direito */
+  background-position: left 20% center; 
+  background-color: var(--purple-dark);
+}
+
+/* Cria um cartão com fundo desfocado atrás do formulário para garantir leitura limpa */
+.form-container {
+  width: 100%;
+  max-width: 380px;
+  background: rgba(57, 44, 111, 0.65); /* Roxo do projeto com transparência */
+  backdrop-filter: blur(12px);          /* Efeito de vidro desfocado */
+  -webkit-backdrop-filter: blur(12px);
+  padding: 35px 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* --- LADO ESQUERDO (COMPUTADOR) --- */
+.login-left-content {
+  flex: 1.2;
+  padding: 60px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.brand-title {
+  font-size: 3.8rem;
+  font-weight: 900;
+  color: #5d3296; /* Tom de lilás/roxo do tema */
+  text-decoration: none;
+  letter-spacing: 2px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.brand-title:hover {
+  transform: scale(1.02);
+}
+
+.poster-text {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 0.95;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.highlight-purple {
+  color: #5d3296;
+  opacity: 0.85;
+}
+
+/* --- LADO DIREITO (COMPUTADOR) --- */
+.login-right-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.mobile-brand {
+  display: none; /* Escondido por padrão no PC */
+}
+
+.form-container {
+  width: 100%;
+  max-width: 380px;
+}
+
+.login-header {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 30px;
+  letter-spacing: 1.5px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-label {
+  font-size: 0.9rem;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+.input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(114, 91, 151, 0.5);
+  font-size: 1rem;
+}
+
+.form-input {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 14px 14px 14px 44px;
+  color: #FFFFFF;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  border-color: var(--nav-arrow-bg);
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* BOTÕES COM EFEITO DE HOVER (AUMENTAR LEVEMENTE) */
+.btn-action {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #6A1B9A 0%, #471485 50%, #3d4ead 100%);
+  color: #FFFFFF;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  /* Animação suave para ampliar ao passar o cursor */
+  transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.25s ease;
+}
+
+.btn-action:hover {
+  transform: scale(1.04); /* Aumenta levemente a caixa */
+  box-shadow: 0 6px 20px rgba(106, 32, 153, 0.5);
+}
+
+.divider-line {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+  margin: 30px 0 25px 0;
+}
+
+.signup-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.signup-text {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+/* ==========================================================================
+   VERSÃO CELULAR / MOBILE (QUADRO DA ESQUERDA NA IMAGEM)
+   ========================================================================== */
+@media (max-width: 850px) {
+  .login-wrapper {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    padding: 40px 20px;
+    justify-content: center;
+  }
+
+  .login-left-content {
+    display: none; /* Esconde a lateral e o texto 'POSTE SEU PROJETO' no celular */
+  }
+
+  .login-right-content {
+    width: 100%;
+    padding: 0;
+  }
+
+  .mobile-brand {
+    display: block; /* Mostra a marca 'MOSTRA+' no topo do celular */
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .form-container {
+    max-width: 340px;
+  }
+
+  .login-header {
+    font-size: 2.6rem;
+  }
+}
+/* ==========================================================================
+   PÁGINA DE CADASTRO (CENTRALIZADA E RESPONSIVA)
+   ========================================================================== */
+.signup-body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--purple-dark);
+}
+
+.signup-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centralização no meio da página */
+  padding: 40px 20px;
+  box-sizing: border-box;
+/* 1. Imagem de fundo apontando para o arquivo salvo */
+  background-image: url('bg-login.jpg'); /* Altere o caminho se salvar em pasta (ex: 'images/bg-login.jpg') */
+  
+  /* 2. Centraliza a imagem na tela */
+  background-position: center center;
+  
+  /* 3. Evita que a imagem fique se repetindo */
+  background-repeat: no-repeat;
+  
+  /* 4. OTIMIZAÇÃO VISUAL: Força a imagem a cobrir 100% da tela sem esticar ou distorcer */
+  background-size: cover;
+  
+  /* 5. Fixa o fundo ao rolar a página (ótimos resultados em telas longas como a de cadastro) */
+  background-attachment: fixed;
+
+  /* 6. COR DE FALLBACK: Exibida enquanto a imagem carrega para não dar "flash" branco */
+  background-color: var(--purple-dark);
+}
+
+.signup-card {
+  width: 100%;
+  max-width: 440px; /* Largura focada no meio da tela */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup-brand {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.signup-header {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* --- SELEÇÃO DE PERFIL (RADIO BUTTONS ESTILIZADOS) --- */
+.profile-selector {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.profile-option {
+  flex: 1;
+  cursor: pointer;
+}
+
+.profile-option input[type="radio"] {
+  display: none; /* Esconde a bolinha padrão do rádio */
+}
+
+.profile-box {
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.profile-box i {
+  font-size: 1.4rem;
+}
+
+/* Estado de Seleção do Perfil */
+.profile-option input[type="radio"]:checked + .profile-box {
+  background-color: var(--nav-arrow-bg);
+  border-color: var(--nav-arrow-bg);
+  color: #FFFFFF;
+  box-shadow: 0 4px 15px rgba(165, 142, 240, 0.4);
+  transform: scale(1.03);
+}
+
+.profile-box:hover {
+  transform: scale(1.03);
+  border-color: var(--nav-arrow-bg);
+}
+
+/* Adjustments dos Botões da Tela de Cadastro */
+.btn-signup-submit {
+  margin-top: 15px;
+}
+
+.login-return-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.btn-secondary-login {
+  background: rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  box-sizing: border-box;
+}
+
+.btn-secondary-login:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 500px) {
+  .signup-card {
+    max-width: 100%;
+  }
+  .signup-header {
+    font-size: 2rem;
+  }
+}
+/* ==========================================================================
+   PÁGINA DE DETALHES DO PROJETO (PROJETO.HTML)
+   ========================================================================== */
+.project-details-container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+
+.project-badge {
+  display: inline-block;
+  background-color: var(--nav-arrow-bg);
+  color: #FFFFFF;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.project-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin: 0 0 10px 0;
+}
+
+.project-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+/* ==========================================================================
+   BOTÃO DE ACESSO AO PROJETO (CENTRALIZADO E COM ESPAÇAMENTO NAS BORDAS)
+   ========================================================================== */
+.access-project-wrapper {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center; /* Centraliza o botão dentro da caixa */
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;         /* Garante respiro lateral de segurança em qualquer tela */
+  box-sizing: border-box;
+}
+
+.btn-access-project {
+  /* Força o botão a NÃO ocupar 100% da largura da tela */
+  width: auto !important;           
+  max-width: 320px;                 /* Limita a largura máxima do botão */
+  margin: 0 auto;                   /* Centraliza horizontalmente */
+  padding: 14px 32px !important;    /* Espaçamento interno em cima/baixo e nas laterais do texto */
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 10px;
+ background: linear-gradient(90deg, #6A1B9A 0%, #4A148C 50%, #3F51B5 100%) !important;
+  color: #FFFFFF;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+  
+  /* Animação e Zoom suave ao passar o mouse */
+  transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.25s ease;
+}
+
+.btn-access-project:hover {
+  transform: scale(1.04);           /* Aumento leve */
+  box-shadow: 0 6px 20px rgba(165, 142, 240, 0.5);
+}
+
+/* GALERIA DE IMAGENS */
+.project-gallery {
+  margin-bottom: 40px;
+}
+
+.main-image-box {
+  width: 100%;
+  max-height: 520px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  margin-bottom: 15px;
+}
+
+.main-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumbnail-list {
+  display: flex;
+  gap: 15px;
+}
+
+.thumb {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  transition: opacity 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.thumb:hover, .thumb.active {
+  opacity: 1;
+  border-color: var(--nav-arrow-bg);
+  transform: scale(1.03);
+}
+
+/* GRID DE DESCRIÇÃO E INTEGRANTES */
+.project-info-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+.project-description-box, .project-members-box {
+  background-color: var(--navbar-bg); /* #392C6F */
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-description-box h2, .project-members-box h2 {
+  font-size: 1.4rem;
+  color: #FFFFFF;
+  margin-top: 0;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.project-description-box p {
+  line-height: 1.7;
+  color: #EED9D5;
+  font-size: 1rem;
+}
+
+.tech-tags {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-tags li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #FFFFFF;
+}
+
+/* INTEGRANTES */
+.member-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0;
+}
+
+.member-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.member-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--nav-arrow-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 1.1rem;
+}
+
+.member-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.member-info strong {
+  color: #FFFFFF;
+  font-size: 0.95rem;
+}
+
+.member-info span {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 850px) {
+  .project-info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-access-project {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

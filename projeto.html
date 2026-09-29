@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mostra+ | Detalhes do Projeto</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO / NAVBAR -->
+  <header class="navbar">
+    <a href="index.html" class="brand-logo">MOSTRA+</a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link"><i class="fa-solid fa-arrow-left"></i> Voltar aos Projetos</a>
+      <a href="login.html" class="btn-login">logar</a>
+    </nav>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL DO PROJETO -->
+  <main class="container project-details-container">
+    
+    <!-- CABEÇALHO DO PROJETO -->
+    <section class="project-header">
+      <div class="project-title-area">
+        <span class="project-badge">Ciência da Computação</span>
+        <h1 class="project-title">Sistema de Gerenciamento Acadêmico Mostra+</h1>
+        <p class="project-subtitle">Plataforma virtual para exibição e catalogação de projetos acadêmicos e universitários.</p>
+      </div>
+
+
+    <!-- GALERIA DE IMAGENS DO PROJETO -->
+    <section class="project-gallery">
+      <div class="main-image-box">
+        <img src="https://via.placeholder.com/1000x550" alt="Imagem Principal do Projeto" id="mainProjectImg">
+      </div>
+      <div class="thumbnail-list">
+        <img src="https://via.placeholder.com/1000x550" class="thumb active" onclick="changeImage(this.src)" alt="Miniatura 1">
+        <img src="https://via.placeholder.com/200x120" class="thumb" onclick="changeImage(this.src)" alt="Miniatura 2">
+        <img src="https://via.placeholder.com/200x120" class="thumb" onclick="changeImage(this.src)" alt="Miniatura 3">
+      </div>
+    </section>
+
+    <!-- GRID INFERIOR: DESCRIÇÃO E INTEGRANTES -->
+    <div class="project-info-grid">
+      
+      <!-- COLUNA DA ESQUERDA: DESCRIÇÃO DETALHADA -->
+      <article class="project-description-box">
+        <h2><i class="fa-solid fa-file-lines"></i> Descrição do Projeto</h2>
+        <p>
+          O Mostra+ é uma vitrine virtual desenvolvida para integrar alunos, professores e a comunidade acadêmica.
+          O objetivo principal é catalogar projetos de extensão, trabalhos de conclusão de curso e pesquisas científicas
+          de forma interativa e acessível.
+        </p>
+        <p>
+          A plataforma conta com sistema de busca inteligente, navegação por categorias, interface responsiva para
+          dispositivos móveis e suporte a autenticação institucional via conta Microsoft (@ulife).
+        </p>
+        
+        <h3>Tecnologias Utilizadas</h3>
+        <ul class="tech-tags">
+          <li>HTML5</li>
+          <li>CSS3 Purista</li>
+          <li>JavaScript</li>
+          <li>UI/UX Responsivo</li>
+        </ul>
+      </article>
+      <!-- COLUNA DA DIREITA: INTEGRANTES E ORIENTADORES -->
+      <aside class="project-members-box">
+        <h2><i class="fa-solid fa-users"></i> Integrantes</h2>
+        
+        <ul class="member-list">
+          <li class="member-card">
+            <div class="member-avatar"><i class="fa-solid fa-user"></i></div>
+            <div class="member-info">
+              <strong>Estudante 1</strong>
+              <span>Desenvolvedor Front-end</span>
+            </div>
+          </li>
+          <li class="member-card">
+            <div class="member-avatar"><i class="fa-solid fa-user"></i></div>
+            <div class="member-info">
+              <strong>Estudante 2</strong>
+              <span>UI/UX Designer</span>
+            </div>
+          </li>
+        </ul>
+
+        <h2><i class="fa-solid fa-chalkboard-teacher"></i> Orientador</h2>
+        <ul class="member-list">
+          <li class="member-card professor-card">
+            <div class="member-avatar"><i class="fa-solid fa-user-tie"></i></div>
+            <div class="member-info">
+              <strong>Prof. Dr. Orientador</strong>
+              <span>Coordenador do Projeto</span>
+            </div>
+          </li>
+        </ul>
+      </aside>
+
+    </div>
+
+  </main>
+     <!-- BOTÃO INSERIDO AQUI (LOGO APÓS A DESCRIÇÃO E TECNOLOGIAS) -->
+        <div class="access-project-wrapper">
+          <a href="#" target="_blank" class="btn-action btn-access-project">
+          <i class="fa-solid fa-external-link-alt"></i> Acessar Projeto
+          </a>
+        </div>
+      </article>
+  <!-- RODAPÉ COLADO -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>MOSTRA +</h3>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>PLATAFORMAS</h3>
+        <ul>
+          <li><a href="#">Android</a></li>
+          <li><a href="#">iOS</a></li>
+          <li><a href="#">macOS</a></li>
+          <li><a href="#">Windows</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* Troca suave de imagem da galeria */
+    function changeImage(src) {
+      document.getElementById('mainProjectImg').src = src;
+      document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
